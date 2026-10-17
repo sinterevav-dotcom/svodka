@@ -1,10 +1,10 @@
 [
-  {"name": "РБК", "url": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss", "rubric": "Бизнес"},
-  {"name": "Интерфакс", "url": "https://www.interfax.ru/rss.asp", "rubric": "Россия"},
-  {"name": "Коммерсантъ", "url": "https://www.kommersant.ru/RSS/news.xml", "rubric": "Россия"},
-  {"name": "ТАСС", "url": "https://tass.ru/rss/v2.xml", "rubric": "Россия"},
-  {"name": "BBC Business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "rubric": "Бизнес"},
-  {"name": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "rubric": "Мир"},
-  {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "rubric": "Идеи"},
-  {"name": "vc.ru", "url": "https://vc.ru/rss/all", "rubric": "Идеи"}
+  {"name": "Коммерсантъ", "url": "https://www.kommersant.ru/RSS/section-business.xml", "rubric": "Бизнес"},
+  {"name": "Ведомости", "url": "https://www.vedomosti.ru/rss/rubric/business", "rubric": "Бизнес"},
+  {"name": "Коммерсантъ", "url": "https://www.kommersant.ru/RSS/section-economics.xml", "rubric": "Россия"},
+  {"name": "BBC Business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "rubric": "Мир"},
+  {"name": "RB.ru", "url": "https://rb.ru/feeds/all/", "rubric": "Идеи"},
+  {"name": "vc.ru", "url": "https://vc.ru/rss/all", "rubric": "Идеи"},
+  {"name": "TechCrunch", "url": "https://techcrunch.com/category/startups/feed/", "rubric": "Идеи"},
+  {"name": "Product Hunt", "url": "https://www.producthunt.com/feed", "rubric": "Идеи"}
 ]

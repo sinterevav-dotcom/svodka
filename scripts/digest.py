@@ -63,6 +63,15 @@ def find_image(entry):
     return m.group(1) if m else None
 
 
+# Политика, война, происшествия и спорт — не про бизнес, отсекаем сразу
+STOP_RE = re.compile(
+    r"войн|всу\b|\bсво\b|обстрел|беспилот|\bбпла|дрон|ракетн|удар[аыу]? по|зеленск|киев|кличко|украин|"
+    r"армия|армии|военн|призыв|мобилизац|теракт|убий|погиб|пострадав|\bдтп\b|авари[яи]|пожар|наводнен|"
+    r"задержан|арестова|приговор|уголовн|выбор[ыа]|депутат|госдум|захарова|лавров|песков|"
+    r"матч|футбол|хоккей|турнир|чемпионат|сборн|олимпи|спортсмен|динамо|цска|спартак|"
+    r"\bwar\b|ukrain|zelensky|kyiv|killed|shooting|attack|election|football|soccer|police",
+    re.I)
+
 OG_RE = re.compile(
     r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)(?::src)?["\'][^>]*content=["\']([^"\']+)["\']'
     r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:image|twitter:image)["\']',
@@ -118,13 +127,16 @@ def collect():
             published = datetime.fromtimestamp(time.mktime(ts), timezone.utc) if ts else None
             if published and published < cutoff:
                 continue
+            summary = clean(entry.get("summary") or (entry.get("content") or [{}])[0].get("value"))
+            if STOP_RE.search(f"{title} {summary}"):
+                continue
             seen.add(key)
             items.append({
                 "id": f"n{len(items)}",
                 "source": f["name"],
                 "rubric": f["rubric"],
                 "title": title,
-                "summary": clean(entry.get("summary")),
+                "summary": summary,
                 "url": link,
                 "image": find_image(entry),
                 "published": published.isoformat() if published else None,
@@ -134,9 +146,17 @@ def collect():
     return items
 
 
-PROMPT = """Ты — редактор утренней деловой сводки для предпринимателя из России.
-Ниже список новостей за последние часы (JSON). Отбери самые важные для бизнеса —
-до {top} штук, убери дубли (одно событие из разных источников объединяй и укажи все id).
+PROMPT = """Ты — редактор деловой сводки для предпринимателя из России, который ищет
+новые возможности для бизнеса. Ниже список новостей за последние часы (JSON).
+
+Отбери до {top} новостей, полезных предпринимателю: деньги, рынки, компании,
+сделки, новые продукты, стартапы, тренды, изменения правил для бизнеса.
+НЕ бери политику, войну, происшествия, спорт, светскую хронику — даже если они громкие.
+Из рубрики «Идеи» (стартапы, новые продукты, кейсы) возьми минимум 4 новости.
+Убери дубли: одно событие из разных источников объединяй и укажи все id.
+
+Рубрики: Бизнес — компании и рынки в России; Россия — экономика и правила для бизнеса в РФ;
+Мир — мировые рынки и компании; Идеи — стартапы, новые продукты, бизнес-модели, кейсы.
 
 Для каждой отобранной новости верни:
 - ids: список id исходных новостей
@@ -144,14 +164,20 @@ PROMPT = """Ты — редактор утренней деловой сводк
 - title: короткий заголовок на русском, до 90 символов, без кликбейта
 - bullets: 2–3 коротких пункта на русском — только факты из текста новостей
 - impact: одно предложение «что это значит для бизнеса в России», без выдумок
+- idea: одна конкретная бизнес-идея для предпринимателя в России, которую подсказывает
+  эта новость (что запустить, кому продать, как заработать) — 1–2 предложения
 - importance: число от 1 до 10
 
 Также верни:
 - intro: одно предложение — главное за день
 - key_figures: до 3 ключевых цифр, которые ЯВНО есть в новостях: {{"label","value","note"}}
+- ideas: 3 лучшие бизнес-идеи дня по мотивам новостей, каждая:
+  {{"title": "название идеи до 60 символов", "pitch": "суть в 1–2 предложениях",
+    "why_now": "почему сейчас — со ссылкой на новость", "first_step": "что сделать на этой неделе"}}
+  Идеи — реалистичные для малого и среднего бизнеса в России, без больших инвестиций.
 
-Не добавляй фактов, которых нет в новостях. Ответ — строго JSON:
-{{"intro": "...", "key_figures": [...], "items": [...]}}
+Факты бери только из новостей; идеи — твои, но опирайся на новости.
+Ответ — строго JSON: {{"intro": "...", "key_figures": [...], "ideas": [...], "items": [...]}}
 
 Новости:
 {news}"""
@@ -200,22 +226,25 @@ def build(items, ai):
                 "title": a.get("title") or first["title"],
                 "bullets": [b for b in (a.get("bullets") or []) if b][:3],
                 "impact": a.get("impact") or "",
+                "idea": a.get("idea") or "",
                 "image": next((s["image"] for s in srcs if s["image"]), None),
                 "sources": [{"name": s["source"], "url": s["url"]} for s in srcs],
                 "published": first["published"],
             })
             if len(out) >= TOP_N:
                 break
-    if not out:  # запасной режим: свежие заголовки, по 3 из каждой рубрики
-        per = {r: 0 for r in RUBRICS}
+    if not out:  # запасной режим: свежие заголовки по рубрикам, идей — больше всего
+        quota = {"Бизнес": 3, "Россия": 2, "Мир": 2, "Идеи": 5}
+        per, per_src = {r: 0 for r in RUBRICS}, {}
         for it in sorted(items, key=lambda x: x["published"] or "", reverse=True):
-            if per.get(it["rubric"], 3) >= 3:
+            if per.get(it["rubric"], 99) >= quota.get(it["rubric"], 0) or per_src.get(it["source"], 0) >= 2:
                 continue
             per[it["rubric"]] += 1
+            per_src[it["source"]] = per_src.get(it["source"], 0) + 1
             out.append({
                 "rubric": it["rubric"], "title": it["title"],
                 "bullets": [it["summary"][:220]] if it["summary"] else [],
-                "impact": "", "image": it["image"],
+                "impact": "", "idea": "", "image": it["image"],
                 "sources": [{"name": it["source"], "url": it["url"]}],
                 "published": it["published"],
             })
@@ -226,6 +255,7 @@ def build(items, ai):
         "edition": "Утренняя" if now.hour < 14 else "Вечерняя",
         "intro": (ai or {}).get("intro", ""),
         "key_figures": ((ai or {}).get("key_figures") or [])[:3],
+        "ideas": [i for i in ((ai or {}).get("ideas") or []) if i.get("title")][:3],
         "ai": bool(ai and ai.get("items")),
         "items": out,
     }
@@ -244,6 +274,10 @@ def send(digest):
     lines.append("")
     for it in digest["items"][:6]:
         lines.append(f"• <b>{html.escape(it['rubric'])}.</b> {html.escape(it['title'])}")
+    if digest.get("ideas"):
+        lines.append("\n<b>Идеи дня</b>")
+        for i in digest["ideas"]:
+            lines.append(f"• {html.escape(i['title'])}")
     text = "\n".join(lines)
     payload = {"text": text, "parse_mode": "HTML", "disable_web_page_preview": True}
     if app_url:
