@@ -1,68 +1,202 @@
 {
- "generated_at": "2026-10-17T14:30:00+07:00",
+ "generated_at": "2026-10-17T19:01:58.096982+07:00",
  "date_label": "Суббота, 17 октября",
- "edition": "Утренняя",
- "intro": "Нефть пробила $100 на фоне распродажи в техсекторе США, а рынок ждёт решения ЦБ по ставке 23 октября.",
- "key_figures": [
-  {"label": "Brent", "value": "$109,9", "note": "+8% за неделю"},
-  {"label": "Ставка ЦБ", "value": "14%", "note": "решение 23 окт"},
-  {"label": "Nasdaq", "value": "−4,5%", "note": "за неделю"}
- ],
- "ai": true,
+ "edition": "Вечерняя",
+ "intro": "",
+ "key_figures": [],
+ "ai": false,
  "items": [
   {
-   "rubric": "Бизнес",
-   "title": "Нефть выше $100: Brent у $110 за баррель",
-   "bullets": ["За неделю нефть подорожала примерно на 8% и в пятницу превысила $100.", "Brent закрылась около $109,9, Urals — около $114."],
-   "impact": "Сырьевым и экспортным компаниям — окно для выручки; логистике и агро — рост затрат на топливо.",
+   "rubric": "Россия",
+   "title": "В Стамбуле перевернулась автоцистерна с 15 тоннами сжиженного газа",
+   "bullets": [
+    "Из-за аварии произошла утечка газа, уточнило агентство DHA"
+   ],
+   "impact": "",
    "image": null,
-   "sources": [{"name": "Babypips", "url": "https://www.babypips.com/analysis/financial-forex-market-weekly-recap-october-16-2026"}, {"name": "Trading Economics", "url": "https://tradingeconomics.com/commodity/crude-oil"}],
-   "published": "2026-10-16T21:19:00+00:00"
+   "sources": [
+    {
+     "name": "ТАСС",
+     "url": "https://tass.ru/proisshestviya/28225317"
+    }
+   ],
+   "published": "2026-10-17T11:59:46+00:00"
   },
   {
    "rubric": "Россия",
-   "title": "ЦБ 23 октября: 7 из 8 аналитиков ждут сохранения ставки 14%",
-   "bullets": ["Большинство опрошенных «Известиями» аналитиков ждут сохранения ставки второй раз подряд.", "По консенсусу, до конца года снижения не будет, хотя в начале года ждали 12%."],
-   "impact": "Кредиты для бизнеса в ближайшие месяцы дешевле не станут — стоит планировать финансирование исходя из текущих ставок.",
+   "title": "Мадьяр: Венгрия хочет продлить исключение из санкций США в отношении нефти из РФ",
+   "bullets": [
+    "Венгерский премьер-министр напомнил, что оно действует до ноября"
+   ],
+   "impact": "",
    "image": null,
-   "sources": [{"name": "Телепорт", "url": "https://www.teleport2001.ru/news/2026-10-15/220120-klyuchevaya-stavka-kakoe-reshenie-primet-bank-rossii-v-oktyabre.html"}],
-   "published": "2026-10-15T09:00:00+00:00"
+   "sources": [
+    {
+     "name": "ТАСС",
+     "url": "https://tass.ru/ekonomika/28225309"
+    }
+   ],
+   "published": "2026-10-17T11:59:37+00:00"
+  },
+  {
+   "rubric": "Россия",
+   "title": "В Москве в турнире по борьбе \"Победа\" примут участие более 1 тыс. спортсменов",
+   "bullets": [
+    "Мероприятие пройдет 17-18 октября"
+   ],
+   "impact": "",
+   "image": null,
+   "sources": [
+    {
+     "name": "ТАСС",
+     "url": "https://tass.ru/sport/28225299"
+    }
+   ],
+   "published": "2026-10-17T11:59:33+00:00"
   },
   {
    "rubric": "Бизнес",
-   "title": "Страхи «пузыря ИИ»: Nasdaq за неделю −4,5%, Dow вырос",
-   "bullets": ["S&P 500 потерял 1,95% за неделю, Nasdaq — 4,48%, Dow прибавил 0,67%.", "Акции CoreWeave упали более чем на 15% из‑за опасений по долгу в $50 млрд."],
-   "impact": "Инвесторы стали осторожнее с ИИ-инфраструктурой — это может охладить оценки ИИ-проектов.",
+   "title": "Канцлер Германии предупредил о возвращении воинского призыва",
+   "bullets": [
+    "В Германии со временем придется вернуть воинский призыв, заявил канцлер Фридрих Мерц на ежегодной конференции молодежной организации блока ХДС/ХСС в Бонне."
+   ],
+   "impact": "",
    "image": null,
-   "sources": [{"name": "Investrade", "url": "https://investrade.com/market-review-october-16-2026/"}],
-   "published": "2026-10-16T21:00:00+00:00"
-  },
-  {
-   "rubric": "Идеи",
-   "title": "64% венчурных денег в III квартале ушло в ИИ-стартапы",
-   "bullets": ["ИИ-стартапы привлекли $102 млрд из $159 млрд мирового венчура.", "Крупнейший раунд недели — $1 млрд для Instinct, разработчика персональных ИИ-ассистентов."],
-   "impact": "Вертикальный ИИ для традиционных отраслей — один из самых финансируемых трендов.",
-   "image": null,
-   "sources": [{"name": "TechJack", "url": "https://techjacksolutions.com/ai-news/markets/?tag=europe"}],
-   "published": "2026-10-05T12:00:00+00:00"
+   "sources": [
+    {
+     "name": "РБК",
+     "url": "https://www.rbc.ru/politics/02/05/2026/69f5ed6b9a794780091c9c25"
+    }
+   ],
+   "published": "2026-10-17T11:57:35+00:00"
   },
   {
    "rubric": "Мир",
-   "title": "ЕК оценила энергокризис в Евросоюзе в 106 млрд евро",
-   "bullets": ["Глава Еврокомиссии назвала оценку ущерба от энергокризиса.", "Мерц: саммит ЕС не принял решений по Украине."],
+   "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
+   "bullets": [
+    "The US president temporarily ends many restrictions on Moscow recently passed by Congress over \"national security\" concerns."
+   ],
    "impact": "",
-   "image": null,
-   "sources": [{"name": "БелТА", "url": "https://belta.by/society/view/glavnye-novosti-za-16-oktjabrja-806364-2026/"}],
-   "published": "2026-10-16T18:59:00+00:00"
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c147/live/f608c860-c9cf-11f1-84c1-fd3c3266bb86.jpg",
+   "sources": [
+    {
+     "name": "BBC World",
+     "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "published": "2026-10-17T11:56:06+00:00"
   },
   {
-   "rubric": "Россия",
-   "title": "С 1 октября тарифы ЖКХ выросли на 8–22%",
-   "bullets": ["Правительство разрешило повысить тарифы в диапазоне 8–22%."],
-   "impact": "Рост коммунальных расходов давит на реальные доходы и потребительский спрос.",
-   "image": null,
-   "sources": [{"name": "Выберу.ру", "url": "https://www.vbr.ru/novosti/finrazbor/2026/07/28/cto-bydet-s-ekonomikoi-rossii-osenu-2026-goda/"}],
-   "published": "2026-10-01T00:00:00+00:00"
+   "rubric": "Бизнес",
+   "title": "Около мэрии Киева прошел протест против Кличко. Видео",
+   "bullets": [
+    "Несколько сотен жителей Киева вышли на акцию с требованием отставки мэра Виталия Кличко, сообщает «Суспiльне Киев»."
+   ],
+   "impact": "",
+   "image": "https://s0.rbk.ru/v6_top_pics/media/img/1/37/347922378238371.jpeg",
+   "sources": [
+    {
+     "name": "РБК",
+     "url": "https://www.rbc.ru/politics/08/10/2026/6ac7f40baf10ee1648aaebfe"
+    }
+   ],
+   "published": "2026-10-17T11:46:04+00:00"
+  },
+  {
+   "rubric": "Бизнес",
+   "title": "«Динамо» — ЦСКА: где смотреть, когда пройдет, кто фаворит",
+   "bullets": [
+    "«Динамо» на своем поле сыграет против ЦСКА в рамках 11-го тура Российской премьер-лиги (РПЛ)"
+   ],
+   "impact": "",
+   "image": "https://s0.rbk.ru/v6_top_pics/media/img/8/72/867922373558728.jpeg",
+   "sources": [
+    {
+     "name": "РБК",
+     "url": "https://www.rbc.ru/sport/15/10/2026/6ad0f52b9a79472b243c5a92"
+    }
+   ],
+   "published": "2026-10-17T11:42:59+00:00"
+  },
+  {
+   "rubric": "Мир",
+   "title": "Rare pink diamond goes on display in France 100 years after amateur heist",
+   "bullets": [
+    "The French royal jewel will be on public display for the first time since it was found hidden in an apple after a 1926 theft."
+   ],
+   "impact": "",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/37cc/live/14013ec0-ca01-11f1-bc2e-018d645d8d21.jpg",
+   "sources": [
+    {
+     "name": "BBC World",
+     "url": "https://www.bbc.co.uk/news/articles/c61m4zkx47vlo?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "published": "2026-10-17T10:46:41+00:00"
+  },
+  {
+   "rubric": "Мир",
+   "title": "Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'",
+   "bullets": [
+    "The 16-year-old suspect previously attended the primary school and had targeted a special educational needs classroom, police say."
+   ],
+   "impact": "",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7c80/live/72894110-c9b4-11f1-9409-01a8c77950d7.jpg",
+   "sources": [
+    {
+     "name": "BBC World",
+     "url": "https://www.bbc.co.uk/news/articles/cv98zw1k8kp3o?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "published": "2026-10-17T09:58:17+00:00"
+  },
+  {
+   "rubric": "Идеи",
+   "title": "Криптобиржа Bitget внесла Россию в список стран, в которых запрещено пользоваться сервисом",
+   "bullets": [
+    "Также в него попала Беларусь."
+   ],
+   "impact": "",
+   "image": "https://leonardo.osnova.io/f130ff1d-1a22-5071-b12e-b6754c6fa5fc/",
+   "sources": [
+    {
+     "name": "vc.ru",
+     "url": "https://vc.ru/crypto/3199827-kriptobirzha-bitget-zapret-rossiya-i-belarusiya?from=rss"
+    }
+   ],
+   "published": "2026-10-17T08:36:16+00:00"
+  },
+  {
+   "rubric": "Идеи",
+   "title": "Mark Wahlberg wants to take on the longevity-startup crowd with an affordable gym concept",
+   "bullets": [
+    "Mark Wahlberg, who once sank money into a gym chain that got kicked off the NYSE, is now building his own, and he promises you’ll get a cold plunge, a blood panel and a protein muffin without needing a trust fund."
+   ],
+   "impact": "",
+   "image": "https://techcrunch.com/wp-content/uploads/2026/10/Mark-Wahlberg.jpg?w=1024",
+   "sources": [
+    {
+     "name": "TechCrunch",
+     "url": "https://techcrunch.com/2026/10/16/mark-wahlberg-wants-to-take-on-the-longevity-startup-crowd-with-an-affordable-gym-concept/"
+    }
+   ],
+   "published": "2026-10-17T02:36:18+00:00"
+  },
+  {
+   "rubric": "Идеи",
+   "title": "Replit is no longer working with Anthropic, CEO says",
+   "bullets": [
+    "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic."
+   ],
+   "impact": "",
+   "image": "https://techcrunch.com/wp-content/uploads/2026/10/replit-ceo-masad.jpg?resize=1200,800",
+   "sources": [
+    {
+     "name": "TechCrunch",
+     "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/"
+    }
+   ],
+   "published": "2026-10-16T21:22:28+00:00"
   }
  ]
 }
