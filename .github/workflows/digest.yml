@@ -1,0 +1,45 @@
+name: Сводка
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 08:00 по Новосибирску
+    - cron: "0 13 * * *"  # 20:00 по Новосибирску
+  workflow_dispatch:       # кнопка «Run workflow» для ручного запуска
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Собрать и отправить сводку
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MINIAPP_URL: ${{ vars.MINIAPP_URL }}
+        run: python scripts/digest.py
+
+      - name: Сохранить сводку для Mini App
+        run: |
+          git config user.name "svodka-bot"
+          git config user.email "svodka-bot@users.noreply.github.com"
+          git add docs/data/digest.json
+          git diff --cached --quiet || git commit -m "Сводка $(date -u +%F_%H%M)"
+          git push

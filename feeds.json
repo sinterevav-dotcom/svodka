@@ -1,0 +1,10 @@
+[
+  {"name": "РБК", "url": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss", "rubric": "Бизнес"},
+  {"name": "Интерфакс", "url": "https://www.interfax.ru/rss.asp", "rubric": "Россия"},
+  {"name": "Коммерсантъ", "url": "https://www.kommersant.ru/RSS/news.xml", "rubric": "Россия"},
+  {"name": "ТАСС", "url": "https://tass.ru/rss/v2.xml", "rubric": "Россия"},
+  {"name": "BBC Business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "rubric": "Бизнес"},
+  {"name": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "rubric": "Мир"},
+  {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "rubric": "Идеи"},
+  {"name": "vc.ru", "url": "https://vc.ru/rss/all", "rubric": "Идеи"}
+]
