@@ -183,10 +183,67 @@ PROMPT = """Ты — редактор деловой сводки для пре�
 {news}"""
 
 
+def parse_json(text):
+    text = text.strip()
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
+    start, end = text.find("{"), text.rfind("}")
+    return json.loads(text[start:end + 1])
+
+
+PREFERRED = ["deepseek", "qwen", "llama-3.3", "llama-4", "gemma", "mistral", "nemotron", "gpt-oss"]
+
+
+def free_models():
+    """Бесплатные модели OpenRouter: сначала известные семейства, потом с большим контекстом."""
+    try:
+        data = requests.get("https://openrouter.ai/api/v1/models", timeout=30).json()["data"]
+    except Exception as e:
+        log(f"[openrouter] список моделей: {e}")
+        return []
+    free = [m for m in data if m["id"].endswith(":free") and (m.get("context_length") or 0) >= 32000
+            and "text" in ((m.get("architecture") or {}).get("output_modalities") or ["text"])]
+
+    def rank(m):
+        mid = m["id"].lower()
+        fam = next((i for i, p in enumerate(PREFERRED) if p in mid), len(PREFERRED))
+        return (fam, -(m.get("context_length") or 0))
+    return [m["id"] for m in sorted(free, key=rank)]
+
+
+def ask_openrouter(items, key):
+    news = [{k: it[k] for k in ("id", "source", "rubric", "title", "summary")} for it in items[:MAX_ITEMS_TO_MODEL]]
+    prompt = PROMPT.format(top=TOP_N, rubrics=", ".join(RUBRICS), news=json.dumps(news, ensure_ascii=False))
+    fixed = os.environ.get("OPENROUTER_MODEL", "").strip()
+    models = [fixed] if fixed else free_models()[:4]
+    for model in models:
+        try:
+            r = requests.post(
+                "https://openrouter.ai/api/v1/chat/completions", timeout=180,
+                headers={"Authorization": f"Bearer {key}", "X-Title": "Svodka bot"},
+                json={"model": model, "temperature": 0.3,
+                      "messages": [{"role": "user", "content": prompt}]})
+            if r.status_code != 200:
+                log(f"[openrouter] {model}: {r.status_code} {r.text[:200]}")
+                continue
+            result = parse_json(r.json()["choices"][0]["message"]["content"])
+            log(f"[openrouter] модель: {model}")
+            return result
+        except Exception as e:
+            log(f"[openrouter] {model}: {e}")
+    return None
+
+
+def ask_ai(items):
+    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if key:
+        return ask_openrouter(items, key)
+    return ask_gemini(items)
+
+
 def ask_gemini(items):
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
-        log("[gemini] нет ключа — режим заголовков")
+        log("[ai] нет ключа — режим заголовков")
         return None
     model = os.environ.get("GEMINI_MODEL", "").strip() or "gemini-2.5-flash"
     news = [{k: it[k] for k in ("id", "source", "rubric", "title", "summary")} for it in items[:MAX_ITEMS_TO_MODEL]]
@@ -295,7 +352,7 @@ def main():
     if not items:
         log("Ни один источник не ответил — сводку не обновляю")
         sys.exit(1)
-    digest = build(items, ask_gemini(items))
+    digest = build(items, ask_ai(items))
     fill_images(digest)
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(json.dumps(digest, ensure_ascii=False, indent=1), encoding="utf-8")
