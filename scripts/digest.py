@@ -63,6 +63,35 @@ def find_image(entry):
     return m.group(1) if m else None
 
 
+OG_RE = re.compile(
+    r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)(?::src)?["\'][^>]*content=["\']([^"\']+)["\']'
+    r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:image|twitter:image)["\']',
+    re.I)
+
+
+def og_image(url):
+    """Обложка статьи из её страницы (og:image), если в RSS картинки не было."""
+    try:
+        r = requests.get(url, timeout=8, headers={"User-Agent": "Mozilla/5.0 SvodkaBot"})
+        m = OG_RE.search(r.text[:200000])
+        if m:
+            img = html.unescape(m.group(1) or m.group(2))
+            return requests.compat.urljoin(r.url, img)
+    except Exception as e:
+        log(f"[og] {url[:60]}: {e}")
+    return None
+
+
+def fill_images(digest):
+    for it in digest["items"]:
+        if not it.get("image"):
+            for s in it["sources"]:
+                img = og_image(s["url"])
+                if img:
+                    it["image"] = img
+                    break
+
+
 def collect():
     feeds = json.loads(FEEDS_FILE.read_text(encoding="utf-8"))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_BACK)
@@ -233,6 +262,7 @@ def main():
         log("Ни один источник не ответил — сводку не обновляю")
         sys.exit(1)
     digest = build(items, ask_gemini(items))
+    fill_images(digest)
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(json.dumps(digest, ensure_ascii=False, indent=1), encoding="utf-8")
     log(f"[out] {len(digest['items'])} новостей, ИИ: {digest['ai']}")
