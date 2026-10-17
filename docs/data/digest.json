@@ -1,154 +1,62 @@
 {
- "generated_at": "2026-10-17T19:01:58.096982+07:00",
+ "generated_at": "2026-10-17T19:17:04.843785+07:00",
  "date_label": "Суббота, 17 октября",
  "edition": "Вечерняя",
  "intro": "",
  "key_figures": [],
+ "ideas": [],
  "ai": false,
  "items": [
   {
-   "rubric": "Россия",
-   "title": "В Стамбуле перевернулась автоцистерна с 15 тоннами сжиженного газа",
+   "rubric": "Идеи",
+   "title": "Meta* выпустила открытую ИИ-модель на 816 млрд параметров — её можно запустить на настольном Mac Studio",
    "bullets": [
-    "Из-за аварии произошла утечка газа, уточнило агентство DHA"
+    "Meta* представила Muse Spark Open — ИИ-модель с 816 млрд параметров, рассчитанную на сложные многоэтапные задачи. Компания заявила, что модель способна работать на настольном компьютере с помощью двух Mac Studio на базе "
    ],
    "impact": "",
-   "image": null,
+   "idea": "",
+   "image": "https://media.rbcdn.ru/media/news/img1946.jpeg",
    "sources": [
     {
-     "name": "ТАСС",
-     "url": "https://tass.ru/proisshestviya/28225317"
+     "name": "RB.ru",
+     "url": "https://rb.ru/news/meta-vypustila-otkrytuyu-ii-model-na-816-mlrd-parametrov-eyo-mozhno-zapustit-na-nastolnom-mac-studio/"
     }
    ],
-   "published": "2026-10-17T11:59:46+00:00"
-  },
-  {
-   "rubric": "Россия",
-   "title": "Мадьяр: Венгрия хочет продлить исключение из санкций США в отношении нефти из РФ",
-   "bullets": [
-    "Венгерский премьер-министр напомнил, что оно действует до ноября"
-   ],
-   "impact": "",
-   "image": null,
-   "sources": [
-    {
-     "name": "ТАСС",
-     "url": "https://tass.ru/ekonomika/28225309"
-    }
-   ],
-   "published": "2026-10-17T11:59:37+00:00"
-  },
-  {
-   "rubric": "Россия",
-   "title": "В Москве в турнире по борьбе \"Победа\" примут участие более 1 тыс. спортсменов",
-   "bullets": [
-    "Мероприятие пройдет 17-18 октября"
-   ],
-   "impact": "",
-   "image": null,
-   "sources": [
-    {
-     "name": "ТАСС",
-     "url": "https://tass.ru/sport/28225299"
-    }
-   ],
-   "published": "2026-10-17T11:59:33+00:00"
+   "published": "2026-10-17T11:00:00+00:00"
   },
   {
    "rubric": "Бизнес",
-   "title": "Канцлер Германии предупредил о возвращении воинского призыва",
+   "title": "Warner Bros. зарегистрировала в РФ товарные знаки из «Гарри Поттера»",
    "bullets": [
-    "В Германии со временем придется вернуть воинский призыв, заявил канцлер Фридрих Мерц на ежегодной конференции молодежной организации блока ХДС/ХСС в Бонне."
+    "Киностудия Warner Bros. зарегистрировала в России два товарных знака из вселенной «Гарри Поттера» — Hogwarts и Hogwarts Legacy. Об этом сообщает ТАСС со ссылкой на базу Роспатента."
    ],
    "impact": "",
-   "image": null,
+   "idea": "",
+   "image": "https://iv.kommersant.ru/SocialPics/9041070_49_0_579272560",
    "sources": [
     {
-     "name": "РБК",
-     "url": "https://www.rbc.ru/politics/02/05/2026/69f5ed6b9a794780091c9c25"
+     "name": "Коммерсантъ",
+     "url": "https://www.kommersant.ru/doc/9041070"
     }
    ],
-   "published": "2026-10-17T11:57:35+00:00"
+   "published": "2026-10-17T09:01:24+00:00"
   },
   {
-   "rubric": "Мир",
-   "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
+   "rubric": "Идеи",
+   "title": "LinkedIn представил крупное обновление сервиса — в соцсети появятся выплаты авторам и лента новостей от контактов",
    "bullets": [
-    "The US president temporarily ends many restrictions on Moscow recently passed by Congress over \"national security\" concerns."
+    "LinkedIn начал тестировать сразу три новые функции для авторов и корпоративных клиентов: монетизацию видео, отдельную ленту публикаций от контактов и платные консультации от экспертов. В рамках программы In-Stream Ads ав"
    ],
    "impact": "",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c147/live/f608c860-c9cf-11f1-84c1-fd3c3266bb86.jpg",
+   "idea": "",
+   "image": "https://media.rbcdn.ru/media/news/web-2026-10-16t175925546-1.jpg",
    "sources": [
     {
-     "name": "BBC World",
-     "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss"
+     "name": "RB.ru",
+     "url": "https://rb.ru/news/linkedin-predstavil-krupnoe-obnovlenie-servisa-v-socseti-poyavyatsya-vyplaty-avtoram-i-lenta-novostej-ot-kontaktov/"
     }
    ],
-   "published": "2026-10-17T11:56:06+00:00"
-  },
-  {
-   "rubric": "Бизнес",
-   "title": "Около мэрии Киева прошел протест против Кличко. Видео",
-   "bullets": [
-    "Несколько сотен жителей Киева вышли на акцию с требованием отставки мэра Виталия Кличко, сообщает «Суспiльне Киев»."
-   ],
-   "impact": "",
-   "image": "https://s0.rbk.ru/v6_top_pics/media/img/1/37/347922378238371.jpeg",
-   "sources": [
-    {
-     "name": "РБК",
-     "url": "https://www.rbc.ru/politics/08/10/2026/6ac7f40baf10ee1648aaebfe"
-    }
-   ],
-   "published": "2026-10-17T11:46:04+00:00"
-  },
-  {
-   "rubric": "Бизнес",
-   "title": "«Динамо» — ЦСКА: где смотреть, когда пройдет, кто фаворит",
-   "bullets": [
-    "«Динамо» на своем поле сыграет против ЦСКА в рамках 11-го тура Российской премьер-лиги (РПЛ)"
-   ],
-   "impact": "",
-   "image": "https://s0.rbk.ru/v6_top_pics/media/img/8/72/867922373558728.jpeg",
-   "sources": [
-    {
-     "name": "РБК",
-     "url": "https://www.rbc.ru/sport/15/10/2026/6ad0f52b9a79472b243c5a92"
-    }
-   ],
-   "published": "2026-10-17T11:42:59+00:00"
-  },
-  {
-   "rubric": "Мир",
-   "title": "Rare pink diamond goes on display in France 100 years after amateur heist",
-   "bullets": [
-    "The French royal jewel will be on public display for the first time since it was found hidden in an apple after a 1926 theft."
-   ],
-   "impact": "",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/37cc/live/14013ec0-ca01-11f1-bc2e-018d645d8d21.jpg",
-   "sources": [
-    {
-     "name": "BBC World",
-     "url": "https://www.bbc.co.uk/news/articles/c61m4zkx47vlo?at_medium=RSS&at_campaign=rss"
-    }
-   ],
-   "published": "2026-10-17T10:46:41+00:00"
-  },
-  {
-   "rubric": "Мир",
-   "title": "Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'",
-   "bullets": [
-    "The 16-year-old suspect previously attended the primary school and had targeted a special educational needs classroom, police say."
-   ],
-   "impact": "",
-   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7c80/live/72894110-c9b4-11f1-9409-01a8c77950d7.jpg",
-   "sources": [
-    {
-     "name": "BBC World",
-     "url": "https://www.bbc.co.uk/news/articles/cv98zw1k8kp3o?at_medium=RSS&at_campaign=rss"
-    }
-   ],
-   "published": "2026-10-17T09:58:17+00:00"
+   "published": "2026-10-17T09:00:00+00:00"
   },
   {
    "rubric": "Идеи",
@@ -157,6 +65,7 @@
     "Также в него попала Беларусь."
    ],
    "impact": "",
+   "idea": "",
    "image": "https://leonardo.osnova.io/f130ff1d-1a22-5071-b12e-b6754c6fa5fc/",
    "sources": [
     {
@@ -167,36 +76,89 @@
    "published": "2026-10-17T08:36:16+00:00"
   },
   {
-   "rubric": "Идеи",
-   "title": "Mark Wahlberg wants to take on the longevity-startup crowd with an affordable gym concept",
+   "rubric": "Бизнес",
+   "title": "АЛРОСА продаст лавандовый бриллиант стоимостью $1,5 млн по инвестпрограмме",
    "bullets": [
-    "Mark Wahlberg, who once sank money into a gym chain that got kicked off the NYSE, is now building his own, and he promises you’ll get a cold plunge, a blood panel and a protein muffin without needing a trust fund."
+    "Лавандовый бриллиант АЛРОСА в форме сердца планируется продать по инвестпрограмме, сообщил глава Якутии Айсен Николаев. Стоимость драгоценного камня оценивается более чем в $1,5 млн."
    ],
    "impact": "",
-   "image": "https://techcrunch.com/wp-content/uploads/2026/10/Mark-Wahlberg.jpg?w=1024",
+   "idea": "",
+   "image": "https://iv.kommersant.ru/SocialPics/9041051_49_3232037_1665017604",
    "sources": [
     {
-     "name": "TechCrunch",
-     "url": "https://techcrunch.com/2026/10/16/mark-wahlberg-wants-to-take-on-the-longevity-startup-crowd-with-an-affordable-gym-concept/"
+     "name": "Коммерсантъ",
+     "url": "https://www.kommersant.ru/doc/9041051"
     }
    ],
-   "published": "2026-10-17T02:36:18+00:00"
+   "published": "2026-10-17T08:25:30+00:00"
+  },
+  {
+   "rubric": "Мир",
+   "title": "Call for more food funding due to high living cost",
+   "bullets": [
+    "Deputy Louise Doublet does not think the cost of living was considered in the ending of a trial."
+   ],
+   "impact": "",
+   "idea": "",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1c5a/live/ea9edaa0-c94d-11f1-8879-9d9deeb686e1.jpg",
+   "sources": [
+    {
+     "name": "BBC Business",
+     "url": "https://www.bbc.co.uk/news/articles/cqde8zk6d916o?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "published": "2026-10-17T06:18:16+00:00"
+  },
+  {
+   "rubric": "Мир",
+   "title": "Charity reflects on changing needs over 25 years",
+   "bullets": [
+    "Help a Guernsey Child says it has provided in excess of £1.2m worth of essential support."
+   ],
+   "impact": "",
+   "idea": "",
+   "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4fdf/live/2864c770-c89d-11f1-b0a4-81e564f1cfaa.jpg",
+   "sources": [
+    {
+     "name": "BBC Business",
+     "url": "https://www.bbc.co.uk/news/articles/c615jnxv7n45o?at_medium=RSS&at_campaign=rss"
+    }
+   ],
+   "published": "2026-10-17T06:11:54+00:00"
   },
   {
    "rubric": "Идеи",
-   "title": "Replit is no longer working with Anthropic, CEO says",
+   "title": "Salience",
    "bullets": [
-    "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic."
+    "See every request to your website and how it responds. Discussion | Link"
    ],
    "impact": "",
-   "image": "https://techcrunch.com/wp-content/uploads/2026/10/replit-ceo-masad.jpg?resize=1200,800",
+   "idea": "",
+   "image": null,
    "sources": [
     {
-     "name": "TechCrunch",
-     "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/"
+     "name": "Product Hunt",
+     "url": "https://www.producthunt.com/products/salience"
     }
    ],
-   "published": "2026-10-16T21:22:28+00:00"
+   "published": "2026-10-17T03:46:40+00:00"
+  },
+  {
+   "rubric": "Идеи",
+   "title": "GPU Terminal by Context.dev",
+   "bullets": [
+    "Compare GPU rental prices across cloud providers Discussion | Link"
+   ],
+   "impact": "",
+   "idea": "",
+   "image": null,
+   "sources": [
+    {
+     "name": "Product Hunt",
+     "url": "https://www.producthunt.com/products/context-dev"
+    }
+   ],
+   "published": "2026-10-17T01:32:08+00:00"
   }
  ]
 }
